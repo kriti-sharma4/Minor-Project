@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/journal.css">
+    <title>Journal</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="white-text">Date</h1>
+        <form action="#">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea white-text"></textarea>
+                    <label for="textarea1" rows="50">Content</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-btn">Submit</button>
+                <button class="btn waves-btn">Clear</button>    
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.textareaAutoResize($('#textarea1'));
+</script>
+</html>

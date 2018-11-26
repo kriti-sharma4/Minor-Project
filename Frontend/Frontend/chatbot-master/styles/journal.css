@@ -1,0 +1,18 @@
+:root {
+    --color-aqua: #6BBAA7;
+    --color-sunshine: #FBA100;
+    --color-dusty-rose: #86A19E;
+    --color-lavender: #6C648B;
+}
+
+body {
+    background-color: var(--color-lavender);
+}
+
+.btn {
+    background-color: var(--color-sunshine);
+}
+
+textarea {
+    background-color: var(--color-dusty-rose);
+}

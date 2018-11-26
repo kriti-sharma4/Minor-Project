@@ -1,0 +1,109 @@
+:root {
+    --color-aqua: #6BBAA7;
+    --color-sunshine: #FBA100;
+    --color-dusty-rose: #86A19E;
+    --color-lavender: #6C648B;
+}
+
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+.chatbot-container {
+    width: 100%;
+    height: 95vh;
+}
+
+div.chatbot-inner-container {
+    background-color: var(--color-aqua);
+    height: 100%;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(231, 231, 231);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px;    
+}
+
+.text-input-container {
+    width: 90%;
+    background-color: var(--color-lavender);
+}
+
+.text-input-container .row {
+    margin: 0;
+}
+
+.send-btn-container {
+    width: 10%;
+    padding: 20px;
+}
+
+#chat-input {
+    resize: none;
+    height: 50px;
+    padding: 12px;
+    overflow: auto;
+    outline: none;
+    max-height: 200px;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.chatbot-messages-container {
+    background-color: var(--color-aqua);
+    height: 90%;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    overflow: auto;
+}
+
+.chatbot-message {
+    margin: 5px;   
+    display: flex;
+}
+
+.chatbot-message span {
+    background-color: #fff;
+    padding: 7px;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.chatbot-container .me {
+    justify-content: flex-end;
+}
+
+.chatbot-message .other {
+    justify-content: flex-start;
+}
+
+.chatbot-message.other span {
+    color: var(--color-dusty-rose);
+}
+
+.btn-floating {
+    border-radius: 0;
+}
+
+.chatbot-menu-btn-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.chatbot-menu-btn {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.chatbot-menu-btn i {
+    color: var(--color-sunshine);
+    font-size: 5em;
+}

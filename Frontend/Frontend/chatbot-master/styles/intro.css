@@ -1,0 +1,23 @@
+.carousel {
+    height: 100vh !important;
+}
+
+.sunshine {
+    background-color: #fba100;
+}
+
+.align-middle {
+    position: sticky;
+    top: 45%;
+}
+
+#intro-list {
+    display: none;
+}
+
+.lavender {
+    background-color: #6C648B;
+}
+.lavender:hover {
+    background-color: #6C648B;
+}
