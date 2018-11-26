@@ -1,0 +1,13 @@
+module.exports={
+    entry:'./src/index.js',
+    output:{
+        path:'_dirname',
+        filename:'bundle.js'
+    },
+    node:{
+        fs:'empty',
+        net:'empty',
+        tls:'empty'
+       },
+   target:'node'
+}
