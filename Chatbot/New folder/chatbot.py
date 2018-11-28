@@ -30,20 +30,6 @@ def sample_main(args):
         saver.restore(sess, model_path)
         chatbot(net, sess, chars, vocab, args.n, args.beam_width,
                 args.relevance, args.temperature, args.topn)
-def sanitize_text(vocab, text): 
-    return ''.join(i for i in text if i in vocab)
-def possibly_escaped_char(raw_chars):
-    if raw_chars[-1] == ';':
-        for i, c in enumerate(reversed(raw_chars[:-1])):
-            if c == ';' or i > 8:
-                return raw_chars[-1]
-            elif c == '&':
-                escape_seq = "".join(raw_chars[-(i + 2):])
-                new_seq = html.unescape(escape_seq)
-                backspace_seq = "".join(['\b'] * (len(escape_seq)-1))
-                diff_length = len(escape_seq) - len(new_seq) - 1
-                return backspace_seq + new_seq + "".join([' '] * diff_length) + "".join(['\b'] * diff_length)
-    return raw_chars[-1]
 def chatbot(net, sess, chars, vocab, max_length, beam_width, relevance, temperature, topn):
     states = initial_state_with_relevance_masking(net, sess, relevance)
     while True:
@@ -55,7 +41,7 @@ def chatbot(net, sess, chars, vocab, max_length, beam_width, relevance, temperat
             states = forward_text(net, sess, states, relevance, vocab, sanitize_text(vocab, "> " + user_input + "\n>"))
             computer_response_generator = beam_search_generator(sess=sess, net=net,
                 initial_state=copy.deepcopy(states), initial_sample=vocab[' '],
-                early_term_token=vocab['\n'], beam_width=beam_width, forward_model_fn=forward_with_mask,
+                early_term_token=vocab['\n']
                 forward_args={'relevance':relevance, 'mask_reset_token':vocab['\n'], 'forbidden_token':vocab['>'],
                                 'temperature':temperature, 'topn':topn})
             for i, char_token in enumerate(computer_response_generator):
